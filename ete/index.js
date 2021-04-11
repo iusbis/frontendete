@@ -47,8 +47,9 @@ function display() {
     var q = document.getElementById("edate").value;
     var l = "T00:00:00Z"
     var c = a + b + "?&from=" + p + l + "&to=" + q + l;
-    if (b == "") {
-        alert("Any field cannot be empty");
+    if (b == "" || p == "" || q == "") {
+        alert("No field can be left empty");
+        return false;
     }
     const url = new URL(c);
     xhr.open('get', url);
